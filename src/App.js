@@ -3,6 +3,15 @@ import CustomAccordion from "./Accordion";
 import { TextField } from "@material-ui/core";
 import { useState } from "react";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import {
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormLabel
+} from "@material-ui/core";
 
 function App() {
   const [contractType, setContractType] = useState(null);
@@ -16,8 +25,11 @@ function App() {
   const [customerName, setCustomerName] = useState(null);
   const [customerEmail, setCustomerEmail] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
-  const [contractEffectiveDate, setContractEffectiveDate] = useState(null);
-  const [contractValidTill, setContractValidTill] = useState(null);  
+  const [effectiveDate, setEffectiveDate] = useState(null);
+  const [validTill, setValidTill] = useState(null);
+  const [renewable, setRenewable] = useState("no");
+  const [paymentTerm, setPaymentTerm] = useState("");
+  const [customPaymentTerm, setCustomPaymentTerm] = useState("");
 
   const handleContractTypeChange = (event, newValue) => {
     setContractType(newValue);
@@ -63,12 +75,16 @@ function App() {
     setCustomerPhone(event.target.value);
   };
 
-  const handleContractEffectiveDateChange = (date) => {
-    setContractEffectiveDate(date);
+  const handleRenewableChange = (event) => {
+    setRenewable(event.target.value);
   };
 
-  const handleContractValidTillChange = (date) => {
-    setContractValidTill(date);
+  const handlePaymentTermChange = (event) => {
+    setPaymentTerm(event.target.value);
+  };
+
+  const handleCustomPaymentTermChange = (event) => {
+    setCustomPaymentTerm(event.target.value);
   };
 
   const contractTypeOptions = [
@@ -119,6 +135,13 @@ function App() {
     { label: "Customer A" },
     { label: "Customer B" },
     { label: "Customer C" },
+  ];
+
+  const paymentTermOptions = [
+    { value: "NET15", label: "Net 15" },
+    { value: "NET30", label: "Net 30" },
+    { value: "NET45", label: "Net 45" },
+    { value: "NET60", label: "Net 60" },
   ];
 
   return (
@@ -251,6 +274,63 @@ function App() {
               fullWidth
               value={customerPhone}
               onChange={(event) => setCustomerPhone(event.target.value)}
+            />
+          </div>
+
+          <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
+            <DatePicker
+              selected={effectiveDate}
+              onChange={(date) => setEffectiveDate(date)}
+              placeholderText="Contract Effective Date"
+              dateFormat="yyyy/MM/dd"
+              className="form-control"
+              style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+            />
+          </div>
+          <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
+            <DatePicker
+              selected={validTill}
+              onChange={(date) => setValidTill(date)}
+              placeholderText="Contract Valid Till"
+              dateFormat="yyyy/MM/dd"
+              className="form-control"
+              style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+            />
+          </div>
+          <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Renewable</FormLabel>
+              <RadioGroup
+                aria-label="renewable"
+                name="renewable"
+                value={renewable}
+                onChange={handleRenewableChange}
+                style={{ display: "flex", flexDirection: "row" }}
+              >
+                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                <FormControlLabel value="No" control={<Radio />} label="No" />
+              </RadioGroup>
+            </FormControl>
+          </div>
+
+          <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
+            <Autocomplete
+              options={paymentTermOptions}
+              getOptionLabel={(option) => option.label}
+              value={paymentTerm}
+              onChange={handlePaymentTermChange}
+              renderInput={(params) => (
+                <TextField {...params} label="Payment Term" fullWidth />
+              )}
+            />
+          </div>
+
+          <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
+            <TextField
+              label="Custom Payment Term"
+              value={customPaymentTerm}
+              onChange={handleCustomPaymentTermChange}
+              fullWidth
             />
           </div>
         </div>
