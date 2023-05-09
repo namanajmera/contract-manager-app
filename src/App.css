@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.CustomAccordion .MuiTextField-root,
+.CustomAccordion .MuiAutocomplete-root {
+  display: inline-block;
+  margin-right: 10px;
+  width: calc(25% - 10px);
+}
+
+.CustomAccordion .MuiFormControl-root {
+  margin-bottom: 16px;
+}
+
+.CustomAccordion .MuiFormControl-root:last-child {
+  margin-bottom: 0;
+}
+
