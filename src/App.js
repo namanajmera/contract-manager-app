@@ -149,10 +149,10 @@ function App() {
       <CustomAccordion title="Contract Details">
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
-            <TextField label="Contract ID" fullWidth />
+            <TextField label="Contract ID" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
           </div>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
-            <TextField label="CRM ID" fullWidth />
+            <TextField label="CRM ID" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
           </div>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
             <Autocomplete
@@ -161,12 +161,12 @@ function App() {
               value={contractType}
               onChange={handleContractTypeChange}
               renderInput={(params) => (
-                <TextField {...params} label="Contract Type" fullWidth />
+                <TextField {...params} label="Contract Type" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
           <div style={{ flexBasis: "25%" }}>
-            <TextField label="Strategic DU" fullWidth />
+            <TextField label="Strategic DU" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
           </div>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
             <Autocomplete
@@ -175,7 +175,7 @@ function App() {
               value={du}
               onChange={handleDUChange}
               renderInput={(params) => (
-                <TextField {...params} label="DU" fullWidth />
+                <TextField {...params} label="DU" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
@@ -186,15 +186,15 @@ function App() {
               value={subDU}
               onChange={handleSubDUChange}
               renderInput={(params) => (
-                <TextField {...params} label="Sub DU" fullWidth />
+                <TextField {...params} label="Sub DU" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
           <div style={{ flexBasis: "25%" }}>
-            <TextField label="Contract Name" fullWidth />
+            <TextField label="Contract Name" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
           </div>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
-            <TextField label="Total Contract Value" fullWidth />
+            <TextField label="Total Contract Value" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
           </div>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
             <Autocomplete
@@ -203,7 +203,7 @@ function App() {
               value={location}
               onChange={handleLocationChange}
               renderInput={(params) => (
-                <TextField {...params} label="Location" fullWidth />
+                <TextField {...params} label="Location" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
@@ -212,7 +212,7 @@ function App() {
               label="Contract Description"
               multiline
               rows={4}
-              fullWidth
+              fullWidth style={{ border: "1px solid #ddd", margin: "4px" }}
             />
           </div>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
@@ -222,7 +222,7 @@ function App() {
               value={salesPerson}
               onChange={handleSalesPersonChange}
               renderInput={(params) => (
-                <TextField {...params} label="Sales Person Name" fullWidth />
+                <TextField {...params} label="Sales Person Name" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
@@ -233,7 +233,7 @@ function App() {
               value={solutioningPerson}
               onChange={handleSolutioningPersonChange}
               renderInput={(params) => (
-                <TextField {...params} label="Solutioning Person Name" fullWidth />
+                <TextField {...params} label="Solutioning Person Name" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
@@ -244,7 +244,7 @@ function App() {
               value={projectManager}
               onChange={handleProjectManagerChange}
               renderInput={(params) => (
-                <TextField {...params} label="Project Manager Name" fullWidth />
+                <TextField {...params} label="Project Manager Name" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
@@ -255,14 +255,14 @@ function App() {
               value={customerName}
               onChange={handleCustomerNameChange}
               renderInput={(params) => (
-                <TextField {...params} label="Customer/Account/Vendor Name" fullWidth />
+                <TextField {...params} label="Customer/Account/Vendor Name" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
             <TextField
               label="Customer/Account Email"
-              fullWidth
+              fullWidth style={{ border: "1px solid #ddd", margin: "4px" }}
               value={customerEmail}
               onChange={(event) => setCustomerEmail(event.target.value)}
             />
@@ -271,7 +271,7 @@ function App() {
           <div style={{ flexBasis: "25%", paddingRight: "8px" }}>
             <TextField
               label="Customer/Account Phone"
-              fullWidth
+              fullWidth style={{ border: "1px solid #ddd", margin: "4px" }}
               value={customerPhone}
               onChange={(event) => setCustomerPhone(event.target.value)}
             />
@@ -320,7 +320,7 @@ function App() {
               value={paymentTerm}
               onChange={handlePaymentTermChange}
               renderInput={(params) => (
-                <TextField {...params} label="Payment Term" fullWidth />
+                <TextField {...params} label="Payment Term" fullWidth style={{ border: "1px solid #ddd", margin: "4px" }} />
               )}
             />
           </div>
