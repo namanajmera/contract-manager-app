@@ -20,7 +20,6 @@ function App() {
   const [location, setLocation] = useState(null);
   const [salesPerson, setSalesPerson] = useState(null);
   const [solutioningPerson, setSolutioningPerson] = useState(null);
-  const [preSalesPerson, setPreSalesPerson] = useState(null);
   const [projectManager, setProjectManager] = useState(null);
   const [customerName, setCustomerName] = useState(null);
   const [customerEmail, setCustomerEmail] = useState('');
@@ -55,24 +54,12 @@ function App() {
     setSolutioningPerson(newValue);
   };
 
-  const handlePreSalesPersonChange = (event, newValue) => {
-    setPreSalesPerson(newValue);
-  };
-
   const handleProjectManagerChange = (event, newValue) => {
     setProjectManager(newValue);
   };
 
   const handleCustomerNameChange = (event) => {
     setCustomerName(event.target.value);
-  };
-
-  const handleCustomerEmailChange = (event) => {
-    setCustomerEmail(event.target.value);
-  };
-
-  const handleCustomerPhoneChange = (event) => {
-    setCustomerPhone(event.target.value);
   };
 
   const handleRenewableChange = (event) => {
@@ -117,12 +104,6 @@ function App() {
     { label: "John Smith" },
     { label: "Jane Smith" },
     { label: "Mike Johnson" },
-  ];
-
-  const preSalesPersonOptions = [
-    { label: "John Johnson" },
-    { label: "Jane Johnson" },
-    { label: "Mike Davis" },
   ];
 
   const projectManagerOptions = [
